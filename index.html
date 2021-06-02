@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<style>
+		::selection{
+            background-color: #00ff0088;
+            color: #000;
+        }
+        body{
+            background-image: url('https://blog.1a23.com/wp-content/uploads/sites/2/2020/02/Desktop.png');
+            background-size: cover;
+            background-position: center center;
+            min-height: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-size: large;
+        }
+        #hero{
+            opacity: 0;
+            position: relative;
+            right: 500px;
+        }
+        .screen{
+            overflow-x: auto;
+        }
+        .punch{
+            width: 50px;
+            margin-top: 20px;
+            animation: balak 500ms;
+        }
+        .punch:hover{
+            background-color: orange;
+            animation: kamla 500ms;
+        }
+        @keyframes balak{
+            from{background-color: orange;}
+            to{background-color: rgb(52, 58, 54);}
+        }
+        @keyframes kamla{
+            from{background-color: rgb(52, 58, 54);}
+            to{background-color: orange;}
+        }
+        .dialpad{
+            background-image: url("https://i.pinimg.com/originals/df/b5/d0/dfb5d05147c47b5fafbd4447dfd26a6b.jpg");
+            background-size: cover;
+            background-position: center center;
+            min-height: 100%;
+            background-repeat: no-repeat;
+        }
+        #villain{
+            display: none;
+        }
+        #heroine{
+            display: none;
+        }
+        #boss{
+            opacity: 0;
+            width: fit-content;
+            margin: 0 auto;
+        }
+	</style>
+    <title>Mathetic</title>
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Pi-symbol.svg/1058px-Pi-symbol.svg.png" type="image/x-icon">
+    <script src="Calculator.js"></script>
+    <script src="PrimeChecker.js"></script>
+    <script src="Multiplication Table.js"></script>
+    <script>
+        $(function(){
+            $("#throne").mouseenter(function(){
+                $("#boss").animate({opacity: 1},1000);
+            });
+        });
+    </script>
+</head>
+<body class="text-light text-center">
+    <div class="container-fluid" style="margin-bottom: 200px;">
+        <img src="Drawing.svg" width="75%"><br>
+        <h1 class="display-3">The Perfect Workspace For a Maths Lover!</h1><br>
+        and for a hater too!
+    </div>
+    <div class="row text-warning" style="margin-bottom: 200px;">
+        <div class="col-sm-8 p-5" id="callhim">
+            <h1 class="display-4">Calculator</h1>
+            <p>Defeat time consuming calculations with this simple and <br> beautiful calculator!</p>
+        </div>
+        <div class="col-sm-4 p-3">
+            <div id="hero">
+                <div class="calc bg-white p-2 rounded" style="width: 350px;font-family: 'Comic Sans MS';">
+                    <div class="screen bg-success text-light p-3 rounded" style="height: 115px;">
+                        <div id="left"></div>
+                        <div id="middle"></div>
+                        <div id="right"></div>
+                    </div>
+                    <div class="dialpad text-center">
+                        <div class="row">
+                            <div class="col-sm"><button class="btn btn-dark punch" id="9" type="button">9</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="8" type="button">8</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="7" type="button">7</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="÷" type="button">÷</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm"><button class="btn btn-dark punch" id="6" type="button">6</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="5" type="button">5</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="4" type="button">4</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="✕" type="button">✕</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm"><button class="btn btn-dark punch" id="3" type="button">3</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="2" type="button">2</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="1" type="button">1</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="-" type="button">-</button></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm"><button class="btn btn-dark punch" id="0" type="button">0</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="C" type="button">C</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="equal" type="button">=</button></div>
+                            <div class="col-sm"><button class="btn btn-dark punch" id="plus" type="button">+</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row" style="margin-bottom: 200px;">
+        <div class="col-sm-4">
+            <div id="villain" style="font-family: 'Comic Sans MS';" class="container text-left">
+                <div class="form-group">
+                    <label for="NUM">Enter Number:</label>
+                    <input id="NUM" class="form-control" type="text" placeholder="type here">
+                </div>
+                <button class="btn btn-warning" id="CHECK" type="button">Check</button>
+                <div id="output"></div>
+            </div>
+        </div>
+        <div class="col-sm-8 p-5 text-info" id="callhimagain">
+            <h1 class="display-4">Prime Checker</h1>
+            <p>Prime numbers seem like a very simple topic, but they <br>trouble people a lot in number thoery and Mental ability problems.<br>So just relax and punch in the numbers you want <br>to check whether prime or not!</p>
+        </div>
+    </div>
+    <div class="container-fluid text-danger mb-5" id="callher">
+        <h1 class="display-4">Multiplication Table</h1>
+        <p>Since our childhood, we are told to<br> memorize tables upto 30..... but no more now!!!</p>
+    </div>
+    <!--yo-->
+    <div class="container" id="heroine">
+        <div class="form-group">
+            <label for="Rows">Rows:</label>
+            <input id="Rows" class="form-control text-center" type="number" placeholder="type here">
+        </div>
+        <div class="form-group">
+            <label for="Columns">Columns:</label>
+            <input id="Columns" class="form-control text-center" type="number" placeholder="type here">
+        </div>
+        <input type="button" value="Create table" id="TABLE" onclick="createTable()" class="btn btn-primary mb-5">
+        <div id="tablearea"></div>
+    </div>
+    <footer class="bg-success text-light p-3" id="throne">
+        <div id="boss">
+            ---made by Irradri Basu Khaund---
+        </div>
+    </footer>
+</body>
+</html>
